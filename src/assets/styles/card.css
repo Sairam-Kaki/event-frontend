@@ -1,0 +1,38 @@
+
+.card1 {
+    box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
+    background-scolor: red;
+    width: 20%;
+}
+
+.card-img-top{
+    margin-left: 1%;
+    width: 98%;
+    height:50%;
+}
+
+.card-body{
+    padding: 5px;
+}
+
+.card-heading p{
+    position: relative;
+    top: 2px;
+}
+
+
+.dates p{
+    padding: 0 !important;
+    margin: 0 !important;
+    height: min-content;
+}
+
+.card-text{
+    height:100px;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+
+.card-text::-webkit-scrollbar{
+    width: 0;
+}

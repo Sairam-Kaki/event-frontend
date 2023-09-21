@@ -1,0 +1,42 @@
+/* LoginInPage.css */
+
+.signin-container {
+    background-image: url('../images/bg-01.jpg');
+    background-size:cover;
+    background-position: center;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+.wrap-login {
+    padding: 5px;
+    height: fit-content;
+    width:39%;
+    min-width:fit-content;
+    max-width: 60vh;
+    border-radius: 15px;
+}
+
+.login-title{
+    margin: 15%;
+}
+
+.register-title{
+    margin-top: 3%;
+}
+
+.form{
+    width:fit-content;
+    margin: auto;
+}
+
+.button{
+    width: 100%;
+    margin-top: 2%;
+}
+
+.login-link{
+    margin-top: 3%;
+}
