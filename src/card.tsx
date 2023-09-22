@@ -9,7 +9,7 @@ export default function Card(props: any) {
     console.log("card props: ", props.data)
     return (
         <>
-            <div className='h-25 card1'>
+            <div className='card1'>
                 <img className="card-img-top" src={image} alt="Card image" />
                 <div className="card-body">
                     <div className="card-heading d-flex justify-content-between">

@@ -1,9 +1,12 @@
 
 .card1 {
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
-    width: 20%;
+    max-width: 20%;
     min-width: 20%;
     margin-right: 5px;
+    overflow:hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .card-img-top{
@@ -20,7 +23,6 @@
     position: relative;
     top: 2px;
 }
-
 
 .dates p{
     padding: 0 !important;

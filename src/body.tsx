@@ -10,42 +10,76 @@ export default function Body(props: any) {
     const pdata = props.data;
     return (
         <>
-            <div className="concerts mt-5">
+            <div className="mt-5">
                 <h3>Concerts </h3>
                 <div className="container-fluid card-row d-flex">
-                    {/* <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/>
-                    <Card data= {props.data}/> */}
                     
-                    {pdata.map((event: any) => 
-                            <Card data={event} />
+                    {pdata.map((event: any) => {
+                        if(event.type === 'concert'){
+                            return <Card data={event} />
+                        }
+                        }
                     )}
 
+                </div>
+            </div>
+            <div className="concerts mt-5">
+                <h3>Conferences </h3>
+                <div className="container-fluid card-row d-flex">
+                    
+                    {pdata.map((event: any) => {
+                        if(event.type === 'Conference'){
+                            return <Card data={event} />
+                        }
+                        }
+                    )}
+
+                </div>
+            </div>
+            <div className="concerts mt-5">
+                <h3>Festival </h3>
+                <div className="container-fluid card-row d-flex">
+                    
+                    {pdata.map((event: any) => {
+                        if(event.type === 'Festival'){
+                            return <Card data={event} />
+                        }
+                        }
+                    )}
 
                 </div>
             </div>
             <div className="concerts mt-5">
                 <h3>Movies </h3>
                 <div className="container-fluid card-row d-flex">
-                    {/* <Card data= {props.data}/> */}
+                {pdata.map((event: any) => {
+                        if(event.type === 'Movies'){
+                            return <Card data={event} />
+                        }
+                        }
+                    )}
                 </div>
             </div>
             <div className="concerts mt-5">
                 <h3>Exhibitions </h3>
                 <div className="container-fluid card-row d-flex">
-                    {/* <Card data= {props.data}/> */}
+                {pdata.map((event: any) => {
+                        if(event.type === 'Exhibition'){
+                            return <Card data={event} />
+                        }
+                        }
+                    )}
                 </div>
             </div>
             <div className="concerts mt-5">
                 <h3>Sports </h3>
                 <div className="container-fluid card-row d-flex">
-                    {/* <Card data= {props.data}/> */}
+                {pdata.map((event: any) => {
+                        if(event.type === 'sports'){
+                            return <Card data={event} />
+                        }
+                        }
+                    )}
                 </div>
             </div>
         </>
