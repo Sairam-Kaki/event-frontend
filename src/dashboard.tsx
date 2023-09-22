@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Heading from './heading'
 import Body from './body';
@@ -7,30 +7,62 @@ import '../src/assets/styles/dashboard.css'
 
 export default function Dashboard() {
     // Example of using useState to manage a state variable
-    const [data, setData] = useState<string | null>(null);
+    const [userData, setUserData] = useState([]); //<Array<object> | null>
+    const [eventData, setEventData] = useState([]);
+
     const navigate = useNavigate();
 
-    // Example of using useEffect to fetch data when the component mounts
+    const token: string | null = sessionStorage.getItem("authToken");
+
+    console.log("Dashboard");
+
     useEffect(() => {
-        // Example Axios request to fetch data
-        axios.get('/api/dashboard-data')
-            .then((response) => {
-                // Assuming the response contains some data
-                setData(response.data);
-            })
-            .catch((error) => {
-                console.error('Error fetching data:', error);
-            });
-    }, []);
+        async function getUserData() {
+            try {
+                const response = await axios.get("http://localhost:8080/dashboard", {
+                    headers: { Authorization: token },
+                });
+                const responseData = response.data;
+                if (responseData.message === "TokenExpiredError") {
+                    navigate("/");
+                } else {
+                    setUserData(responseData.userData);
+                }
+            } catch (error) {
+                console.error('Error fetching user data:', error);
+            }
+        }
+
+        async function getEventData() {
+            try {
+                const response = await axios.get("http://localhost:8080/event");
+                const responseData = response.data;
+                const edata = responseData.eventData;
+                setEventData(edata);
+            } catch (error) {
+                console.error('Error fetching event data:', error);
+            }
+        }
+
+        if (token) {
+            getUserData();
+            getEventData();
+        } else {
+            sessionStorage.clear();
+            navigate("/");
+        }
+    }, [navigate, token]);
+    
+    console.log("eventdata: ", eventData);
 
     return (
         <>
-            <div className='fixed-top'>
-                <Heading />
+             <div className='fixed-top'>
+                <Heading data={userData} />
             </div>
             <div className='bodyy'>
-                <Body />
-            </div>
+                <Body data = {eventData}/>
+            </div> 
         </>
     );
 }

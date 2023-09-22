@@ -8,14 +8,17 @@ export default function SignIn() {
     const [password, setPassword] = useState<string>("");
     const navigate = useNavigate();
 
+    
+
     const handleSubmit = async (event: SyntheticEvent) => {
         event.preventDefault();
 
         try {
-            const response = await axios.post("http://localhost:8082/login", {
+            const response = await axios.post("http://localhost:8080/login", {
                 email: email,
                 password: password
             });
+            sessionStorage.setItem("authToken",response.data.token);
 
             if (response.status === 401) {
                 console.log("Invalid Credentials");

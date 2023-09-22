@@ -28,7 +28,7 @@ export default function SignUp() {
             return;
         } else {
             try {
-                const response = await axios.post("http://localhost:8082/register", {
+                const response = await axios.post("http://localhost:8080/register", {
                     email: data.email,
                     username: data.name,
                     password: data.password
