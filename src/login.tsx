@@ -20,10 +20,14 @@ export default function SignIn() {
             });
             sessionStorage.setItem("authToken",response.data.token);
 
-            if (response.status === 401) {
-                console.log("Invalid Credentials");
-            } else if (response.status === 200) {
+            if (response.data.message === "login") {
                 navigate('/dashboard');
+            }
+            else if(response.data.message === 'adminLogin'){
+                navigate('/admindashboard');
+            }
+            else{
+                alert("Invalid Credentials!");
             }
 
         } catch (error: any) {

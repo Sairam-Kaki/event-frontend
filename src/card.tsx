@@ -29,9 +29,11 @@ export default function Card(props: any) {
                     <p className="card-text">
                         {props.data.description}
                     </p>
-                    <div className="foot d-flex justify-content-end">
-                        <a href="#" className="btn btn-primary book-btn">Book Ticket</a>
-                    </div>
+                    {window.location.pathname === '/dashboard' &&
+                        <div className="foot d-flex justify-content-end">
+                            <a href="#" className="btn btn-primary book-btn">Book Ticket</a>
+                        </div>}
+
 
                 </div>
             </div>
