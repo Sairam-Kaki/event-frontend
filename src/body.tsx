@@ -10,12 +10,13 @@ export default function Body(props: any) {
     const pdata = props.data;
     return (
         <>
+        <input className="form-control" id="myInput" type="text" placeholder="Search.."></input>
             <div className="mt-5">
                 <h3>Concerts </h3>
                 <div className="container-fluid card-row d-flex">
                     
                     {pdata.map((event: any) => {
-                        if(event.type === 'concert'){
+                        if((event.type).toLowerCase() === 'concert'){
                             return <Card data={event} />
                         }
                         }
@@ -53,7 +54,7 @@ export default function Body(props: any) {
                 <h3>Movies </h3>
                 <div className="container-fluid card-row d-flex">
                 {pdata.map((event: any) => {
-                        if(event.type === 'Movies'){
+                        if(event.type === 'Movie'){
                             return <Card data={event} />
                         }
                         }
@@ -75,7 +76,7 @@ export default function Body(props: any) {
                 <h3>Sports </h3>
                 <div className="container-fluid card-row d-flex">
                 {pdata.map((event: any) => {
-                        if(event.type === 'sports'){
+                        if(event.type === 'Sports'){
                             return <Card data={event} />
                         }
                         }

@@ -19,7 +19,7 @@ export default function AdminDashboard() {
     useEffect(() => {
         async function getUserData() {
             try {
-                const response = await axios.get("http://localhost:8080/dashboard", {
+                const response = await axios.get("http://localhost:8080/admindashboard", {
                     headers: { Authorization: token },
                 });
                 const responseData = response.data;
@@ -63,7 +63,7 @@ export default function AdminDashboard() {
             {window.location.pathname === '/admindashboard' &&
                 <div className="create-event mt-5">
 
-                    <EventForm />
+                    
                 </div>
             }
 

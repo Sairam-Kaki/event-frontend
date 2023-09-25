@@ -73,20 +73,23 @@ const EventForm = () => {
             const url = `http://localhost:8080/admin`;
             axios.post(url, data)
                 .then((response) => {
-                    if (response.data.message === "Event Already Exists") {
+                    if (response.data === "Event Already Exists") {
                         // toast.warning("Event Already Exists", {
                         //   position: toast.POSITION.TOP_RIGHT,
                         // });
                         alert("Event Already Exists");
                     }
-                    if (response.data.message === "Event Created Successfully") {
+                    if (response.data === "Event Created Successfully") {
                         // toast.success("Event Created Successfully", {
                         //   position: toast.POSITION.TOP_RIGHT,
                         // });
                         alert("Event Created Successfully");
                         setTimeout(() => {
                             window.location.reload()
-                        }, 1000)
+                        }, 100)
+                    }
+                    else{
+                        alert(response.data )
                     }
 
                 })
