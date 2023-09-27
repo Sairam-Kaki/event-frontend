@@ -61,13 +61,10 @@ export default function AdminDashboard() {
                 <Heading data={userData} />
             </div>
             {window.location.pathname === '/admindashboard' &&
-                <div className="create-event mt-5">
-
-                    
+                <div className="create-event">
+                    <EventForm />
                 </div>
             }
-
-
             <div className='bodyy'>
                 <Body data={eventData} />
             </div>

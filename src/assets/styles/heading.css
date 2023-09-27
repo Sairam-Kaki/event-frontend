@@ -1,4 +1,50 @@
+.main-heading{
+    background: #19105B;
+}
 
-.logout{
+.search{
     height: fit-content;
+    width: 20%;
+    margin-top: 0.2%;
+    margin-left: 0.2%;
+    background-color: rgb(247, 236, 236);
+    border-radius: 0;
+}
+
+.title{
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    right: 4.5%;
+}
+
+.title span{
+    color: #FF6196;
+}
+
+.dropdown{
+    color: white;
+}
+
+.dropdown button{
+    height: 100%;
+    border-radius: 0;
+}
+
+.dropdown-toggle::after {
+    margin-left: 0.255em !important;
+    vertical-align: 0.00em !important;
+    border-top: 0.5em solid !important;
+    border-right: 0.5em solid transparent !important;
+    border-left: 0.5em solid transparent !important;
+}
+
+.dropdown button:focus{
+    border: none !important;
+}
+
+.logout-logo{
+    position:relative;
+    left: 5px;
+    bottom: 1px
 }

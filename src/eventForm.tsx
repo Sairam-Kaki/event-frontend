@@ -1,12 +1,8 @@
 import { useState } from "react";
-// import TextField from "@mui/material/TextField";
+import axios from "axios";
+import "../src/assets/styles/form.css"
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
-import axios from "axios";
-// import 'reactjs-popup/dist/index.css'
-import { format } from "path";
-import { start } from "repl";
-import "../src/assets/styles/form.css"
 
 const EventForm = () => {
     const [eventTitle, setEventTitle] = useState("");
@@ -59,7 +55,6 @@ const EventForm = () => {
 
     const createEvent = () => {
 
-
         if (
             eventTitle.trim() !== "" &&
             location.trim() !== "" &&
@@ -88,8 +83,8 @@ const EventForm = () => {
                             window.location.reload()
                         }, 100)
                     }
-                    else{
-                        alert(response.data )
+                    else {
+                        alert(response.data)
                     }
 
                 })
@@ -114,13 +109,8 @@ const EventForm = () => {
 
     return (
         <>
-
-            {window.location.pathname === "/admindashboard" && (
-                <div onKeyDown={(e) => {
-                    if (e.key === "Enter") {
-                        createEvent()
-                    }
-                }}>
+            {window.location.pathname === "/admindashboard" ? (
+                <div >
                     <button
                         className="btn mybtn create"
                         data-bs-toggle="modal"
@@ -135,9 +125,7 @@ const EventForm = () => {
                                 <div className="pe-3 ps-3">
                                     <div className="modal-header">
                                         <h1 className="modal-title heading">New Event</h1>
-
                                         <div>{close("modal")}</div>
-
                                     </div>
                                     <div className="modal-body">
                                         <p className="labels">
@@ -258,9 +246,9 @@ const EventForm = () => {
                     </div>
                 </div>
             )
-                // : (
-                //     ""
-                // )
+                : (
+                    ""
+                )
             }
         </>
     );

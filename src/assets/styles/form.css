@@ -2,11 +2,12 @@
     width: auto;
     background-color: #FF6196 !important;
     font-family: "Arial" !important;
-    font-size:1rem;
+    font-size:0.9rem;
     color: #ffffff;
 }
 
 .modal-header {
+    color:#19105B;
     border-bottom: 1px dashed rgb(197, 192, 192) !important;
 }
 

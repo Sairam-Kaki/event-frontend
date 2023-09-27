@@ -1,11 +1,14 @@
 
 .card1 {
+    font-size: 12px;
+    background: white;
     box-shadow: 0px 0px 5px 1px rgba(0, 0, 0, 0.2);
     max-width: 20%;
-    min-width: 20%;
-    margin-right: 5px;
+    min-width: 19%;
+    margin-right: 10px;
     overflow:hidden;
-    white-space: nowrap;
+    /* white-space: nowrap; */
+    height:fit-content;
     text-overflow: ellipsis;
 }
 
@@ -19,19 +22,36 @@
     padding: 5px;
 }
 
+.card-heading{
+    height: 50px;
+    overflow: hidden;
+    overflow-y: scroll;
+    padding-bottom: 5px;
+}
+
+.card-title{
+    color: #19105b;
+}
+
+.card-heading::-webkit-scrollbar{
+    width: 0;
+}
+
 .card-heading p{
     position: relative;
     top: 2px;
+    
 }
 
 .dates p{
-    padding: 0 !important;
+    padding-top: 3px;
     margin: 0 !important;
     height: min-content;
 }
 
 .card-text{
-    height:40px;
+    color: gray;
+    height:30px;
     overflow: hidden;
     overflow-y: scroll;
 }
@@ -40,6 +60,12 @@
     width: 0;
 }
 
-.bofok-btn{
-    float:right;
+.book-btn{
+    color: white;
+    background-color: #ff095c ;
+}
+
+.book-btn:hover{
+    background-color: #b31147;
+    color: white
 }
