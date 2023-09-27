@@ -23,12 +23,16 @@
 .date-input{
     height: 36px !important;
     width:135px;
-    border:solid 1px #babdc5;
+    border:solid 1px #6f7074;
     border-radius:3px;   
 }
 
 .date-input:focus{
     border:2px solid rgb(40, 148, 221);
+}
+
+textarea{
+    border:solid 1px #6f7074 !important;
 }
 
 .close-button{

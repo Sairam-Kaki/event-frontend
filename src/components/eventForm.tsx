@@ -1,6 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
-import "../src/assets/styles/form.css"
+import "../assets/styles/form.css"
 // import { ToastContainer, toast } from "react-toastify";
 // import "react-toastify/dist/ReactToastify.css";
 
@@ -12,6 +12,7 @@ const EventForm = () => {
     const [startDateTime, setStartDateTime] = useState("");
     const [endDateTime, setEndDateTime] = useState("");
     const [price, setPrice] = useState("");
+    const [tickets, setTickets] = useState("");
 
     const [startDate, startTime] = startDateTime.split("T");
     const [endDate, endTime] = endDateTime.split("T");
@@ -29,7 +30,6 @@ const EventForm = () => {
     const formattedDateTime = `${year}-${month}-${day} ${hours}:${minutes}:${seconds}`;
 
 
-
     const data = {
         eventTitle: eventTitle,
         location: location,
@@ -40,9 +40,8 @@ const EventForm = () => {
         startTime: startTime,
         endTime: endTime,
         price: price,
+        tickets: tickets
     };
-
-    const [post, setPost] = useState(null);
 
     const close = (values: any) => {
         return (<button
@@ -128,15 +127,30 @@ const EventForm = () => {
                                         <div>{close("modal")}</div>
                                     </div>
                                     <div className="modal-body">
-                                        <p className="labels">
-                                            Event Title<span className="text-danger">*</span>
-                                        </p>
-                                        <input
-                                            required
-                                            id="eventTitle"
-                                            className="mb-2"
-                                            onChange={(e) => setEventTitle(e.target.value)}
-                                        />
+                                        <div className="d-flex flex-row mb-2">
+                                            <div className="event-title me-2">
+                                                <p className="labels">
+                                                    Event Title<span className="text-danger">*</span>
+                                                </p>
+                                                <input
+                                                    required
+                                                    id="eventTitle"
+                                                    className="mb-2"
+                                                    onChange={(e) => setEventTitle(e.target.value)}
+                                                />
+                                            </div>
+                                            <div className="tickets">
+                                                <p className="labels">
+                                                    Number of Tickets<span className="text-danger">*</span>
+                                                </p>
+                                                <input
+                                                    type="number"
+                                                    id="tickets"
+                                                    name="tickets"
+                                                    onChange={(e) => setTickets(e.target.value)}
+                                                />
+                                            </div>
+                                        </div>
                                         <div className="d-flex flex-row mb-2">
                                             <div className="me-2">
                                                 <p className="labels">
@@ -205,16 +219,17 @@ const EventForm = () => {
                                                     }}
                                                 />
                                             </div>
-                                            <div>
+                                            <div className="price">
                                                 <p className="labels">
                                                     Price<span className="text-danger">*</span>
                                                 </p>
                                                 <input
-                                                    type="text-box"
+                                                    type="number"
                                                     id="price"
                                                     name="price"
                                                     className="date-input"
                                                     onChange={(e) => setPrice(e.target.value)}
+                                                    required
                                                 />
                                             </div>
                                         </div>
@@ -225,7 +240,9 @@ const EventForm = () => {
                                             <textarea
                                                 className="form-control"
                                                 id="exampleFormControlTextarea1"
+                                                name= "description"
                                                 onChange={(e) => setDesc(e.target.value)}
+                                                required
                                             ></textarea>
                                         </div>
                                     </div>

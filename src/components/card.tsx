@@ -1,10 +1,10 @@
-import "../src/assets/styles/card.css"
-import Concerts from "../src/assets/images/concert.jpeg"
-import Conferences from "../src/assets/images/Conference.jpg"
-import Festivals from "../src/assets/images/Festival.webp"
-import Movies from "../src/assets/images/Movies.webp"
-import Exhibitions from "../src/assets/images/Exhibitions.jpeg"
-import Sports from "../src/assets/images/Sports.webp"
+import "../assets/styles/card.css"
+import Concerts from "../assets/images/concert.jpeg"
+import Conferences from "../assets/images/Conference.jpg"
+import Festivals from "../assets/images/Festival.webp"
+import Movies from "../assets/images/Movies.webp"
+import Exhibitions from "../assets/images/Exhibitions.jpeg"
+import Sports from "../assets/images/Sports.webp"
 import axios from "axios"
 import { useNavigate } from "react-router-dom"
 
@@ -22,15 +22,19 @@ const navigate = useNavigate();
         try{
             const response = await axios.post('http://localhost:8080/bookTicket', {
                 token: token,
-                eventId: props.data.eventid
+                eventId: props.data.eventid,
+                availTickets: props.data.availability
             });
 
             if (response.data.message==='TokenExpiredError'){
                 sessionStorage.clear();
                 navigate("/");
             }
-            if(response.data.message === 'Ticket booked successfully'){
+            else if(response.data.message === 'Ticket booked successfully'){
                 alert("Ticket booked successfully");
+            }
+            else if(response.data.message === 'Tickets are unavailable'){
+                alert("Sorry, no tickets available!");
             }
 
         } catch{

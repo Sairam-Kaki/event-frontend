@@ -1,6 +1,26 @@
+
 h3{
     color: #19105b;
     margin-left: 1%;
     width: 98%;
     border-bottom: 0.5px solid rgb(124, 0, 128);
+}
+
+.card-row{
+    overflow: hidden;
+    overflow-x: scroll;
+}
+
+#myInput{
+    position: absolute;
+    top: 30px;
+    z-index: 1 !important;
+    height: fit-content;
+    width: 20%;
+    margin-top: 0.2%;
+    margin-left: 0.2%;
+    background-color: rgb(247, 236, 236);
+    border-radius: 0;
+    transform: translateY(-2vmax);
+
 }

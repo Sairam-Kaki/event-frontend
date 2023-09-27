@@ -1,8 +1,5 @@
-import { useEffect, useState } from 'react';
-import '../src/assets/styles/heading.css'
-import axios from 'axios';
-import { Navigate, useNavigate } from 'react-router-dom';
-import EventForm from './eventForm';
+import '../assets/styles/heading.css'
+import {useNavigate } from 'react-router-dom';
 
 export default function Heading(props: any) {
     const navigate = useNavigate();
@@ -16,7 +13,6 @@ export default function Heading(props: any) {
         <>
             <header className="main-heading d-flex">
                 {/* <p className='search'>Search bar here...</p> */}
-                <input className="form-control search" id="myInput" type="text" placeholder="Search.."></input>
 
                 <h2 className='title text-center text-white'>Book<span>it</span> Now</h2>
 

@@ -1,6 +1,6 @@
 import React, { useState, SyntheticEvent } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import '../src/assets/styles/auth.css';
+import '../assets/styles/auth.css';
 import axios, { AxiosError } from "axios";
 
 export default function SignIn() {

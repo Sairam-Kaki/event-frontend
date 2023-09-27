@@ -3,8 +3,8 @@ import { Navigate, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Heading from './heading'
 import Body from './body';
-import '../src/assets/styles/dashboard.css'
-import EventForm from './eventForm';
+import '../assets/styles/dashboard.css'
+import EventForm from '../components/eventForm';
 
 export default function AdminDashboard() {
     // Example of using useState to manage a state variable
@@ -57,7 +57,7 @@ export default function AdminDashboard() {
 
     return (
         <>
-            <div className='fixed-top'>
+            <div className='stickey-top'>
                 <Heading data={userData} />
             </div>
             {window.location.pathname === '/admindashboard' &&

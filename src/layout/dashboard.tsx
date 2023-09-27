@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Navigate, useNavigate } from 'react-router-dom';
+import {useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Heading from './heading'
 import Body from './body';
-import '../src/assets/styles/dashboard.css'
+import '../assets/styles/dashboard.css'
 
 export default function Dashboard() {
     // Example of using useState to manage a state variable
