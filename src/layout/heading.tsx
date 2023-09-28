@@ -1,5 +1,5 @@
 import '../assets/styles/heading.css'
-import {useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 export default function Heading(props: any) {
     const navigate = useNavigate();
@@ -11,16 +11,14 @@ export default function Heading(props: any) {
 
     return (
         <>
-            <header className="main-heading d-flex">
-                {/* <p className='search'>Search bar here...</p> */}
-
-                <h2 className='title text-center text-white'>Book<span>it</span> Now</h2>
-
+            <header className="main-heading d-flex stickey-top">
+                
+                <h2 className='title text-center text-white' >Book<span>it</span> Now</h2>
                 <div className="dropdown">
                     <button type="button" className="btn text-white dropdown-toggle" data-bs-toggle="dropdown">
                         {props.data.username}
                     </button>
-                    <ul className="dropdown-menu">
+                    <ul className="dropdown-menu" >
 
                         <li onClick={logout}>
                             <a className="dropdown-item logout" href="#">Logout

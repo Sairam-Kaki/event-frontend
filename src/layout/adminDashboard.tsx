@@ -57,7 +57,7 @@ export default function AdminDashboard() {
 
     return (
         <>
-            <div className='stickey-top'>
+            <div className='fixed-top'>
                 <Heading data={userData} />
             </div>
             {window.location.pathname === '/admindashboard' &&

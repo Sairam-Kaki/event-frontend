@@ -1,8 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 import "../assets/styles/form.css"
-// import { ToastContainer, toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
 
 const EventForm = () => {
     const [eventTitle, setEventTitle] = useState("");
@@ -68,15 +66,10 @@ const EventForm = () => {
             axios.post(url, data)
                 .then((response) => {
                     if (response.data === "Event Already Exists") {
-                        // toast.warning("Event Already Exists", {
-                        //   position: toast.POSITION.TOP_RIGHT,
-                        // });
                         alert("Event Already Exists");
                     }
                     if (response.data === "Event Created Successfully") {
-                        // toast.success("Event Created Successfully", {
-                        //   position: toast.POSITION.TOP_RIGHT,
-                        // });
+                       
                         alert("Event Created Successfully");
                         setTimeout(() => {
                             window.location.reload()
@@ -88,20 +81,14 @@ const EventForm = () => {
 
                 })
                 .catch((error) => {
-                    //   toast.error("Network Error", {
-                    //     position: toast.POSITION.TOP_RIGHT,
-                    //   });
+                   
                     alert("Network error!");
 
                     console.log(error);
                 });
         }
         else {
-            //   toast.error("Please check all the fields", {
-            //     position: toast.POSITION.TOP_RIGHT,
-            //   });
             alert("Please check all the fields");
-            // console.log("error: ")
         }
     };
 

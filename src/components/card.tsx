@@ -40,6 +40,7 @@ const navigate = useNavigate();
         } catch{
             alert("Booking Failed!");
         }
+        window.location.reload();
     }
 
     var typ;
